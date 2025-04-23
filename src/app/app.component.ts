@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     // Llama al servicio para obtener la respuesta del backend
-    this.apiService.getHola().subscribe(
+    this.apiService.getUsuario().subscribe(
       (response) => {
         this.message = response.message;  // Asigna el mensaje a una variable
         console.log(response);  // Muestra la respuesta en la consola

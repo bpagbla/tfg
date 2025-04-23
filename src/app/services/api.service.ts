@@ -11,11 +11,11 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  getHola(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/hola`);
+  getUsuario(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/usuarios`);
 
 
   }
 
-  // más métodos
+
 }
