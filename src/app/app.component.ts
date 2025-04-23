@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  template: `<h1>{{ message }}</h1>`,
 })
-export class AppComponent {
-  title = 'pfc';
+export class AppComponent implements OnInit {
+  message: string = '';
+
+  constructor(private apiService: ApiService) {}
+
+  ngOnInit() {
+    // Llama al servicio para obtener la respuesta del backend
+    this.apiService.getHola().subscribe(
+      (response) => {
+        this.message = response.message;  // Asigna el mensaje a una variable
+        console.log(response);  // Muestra la respuesta en la consola
+      },
+      (error) => {
+        console.error('Error al conectar con el backend:', error);  // Muestra el error en consola si ocurre
+      }
+    );
+  }
 }
