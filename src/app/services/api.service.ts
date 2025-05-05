@@ -14,8 +14,6 @@ export class ApiService {
   getUsuario(): Observable<any> {
     return this.http.get(`${this.baseUrl}/usuarios`);
 
-
   }
-
 
 }

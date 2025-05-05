@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     this.apiService.getUsuario().subscribe(
       (response) => {
         this.message = response.message;  // Asigna el mensaje a una variable
-        console.log(response);  // Muestra la respuesta en la consola
+        console.log(response);  // Muestra la respuesta 
       },
       (error) => {
         console.error('Error al conectar con el backend:', error);  // Muestra el error en consola si ocurre
